@@ -1,3 +1,5 @@
+//进行播种
+
 const { db } = require('@vercel/postgres');
 const {
   invoices,
@@ -7,6 +9,7 @@ const {
 } = require('../app/lib/placeholder-data.js');
 const bcrypt = require('bcrypt');
 
+//为什么每个函数最后都要return？比如return {createTable,users: insertedUsers,};？？
 async function seedUsers(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
